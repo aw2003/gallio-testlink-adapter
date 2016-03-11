@@ -44,24 +44,68 @@ namespace Meyn.TestLink
         #endregion
 
         #region Builds
+        /// <summary>
+        /// Create a build with a given dev key for a test plan ID, along with buildnotes.
+        /// </summary>
+        /// <param name="devKey"></param>
+        /// <param name="testplanid"></param>
+        /// <param name="buildname"></param>
+        /// <param name="buildnotes"></param>
+        /// <returns></returns>
         [XmlRpcMethod("tl.createBuild", StructParams=true)]
         object[] createBuild(string devKey, int testplanid, string buildname, string buildnotes);
 
+        /// <summary>
+        /// Get the builds for a given test plan ID
+        /// </summary>
+        /// <param name="devKey"></param>
+        /// <param name="testplanid"></param>
+        /// <returns></returns>
         [XmlRpcMethod("tl.getBuildsForTestPlan", StructParams = true)]
         object getBuildsForTestPlan(string devKey, int testplanid);
         
         #endregion
 
         #region TestProject
+        /// <summary>
+        /// Get all the projects
+        /// </summary>
+        /// <param name="devKey"></param>
+        /// <returns></returns>
         [XmlRpcMethod("tl.getProjects", StructParams = true)]
         object getProjects(string devKey);
        
+        /// <summary>
+        /// Get a test project by name
+        /// </summary>
+        /// <param name="devKey"></param>
+        /// <param name="testprojectname"></param>
+        /// <returns></returns>
         [XmlRpcMethod("tl.getTestProjectByName", StructParams = true)]
         object getTestProjectByName(string devKey, string testprojectname);
 
+        /// <summary>
+        /// Create a test project. Supply the name, a tescase prefix and optional notes.
+        /// </summary>
+        /// <param name="devKey"></param>
+        /// <param name="testprojectname"></param>
+        /// <param name="testcaseprefix"></param>
+        /// <param name="notes"></param>
+        /// <returns></returns>
         [XmlRpcMethod("tl.createTestProject", StructParams = true)]
         object createTestProject(string devKey, string testprojectname, string testcaseprefix, string notes = "");
         
+        /// <summary>
+        /// Upload a test project attachment to a given test project.
+        /// </summary>
+        /// <param name="devKey"></param>
+        /// <param name="testprojectid"></param>
+        /// <param name="filename"></param>
+        /// <param name="fileType"></param>
+        /// <param name="content"></param>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <returns></returns>
         [XmlRpcMethod("tl.uploadTestProjectAttachment", StructParams = true)]
         object uploadTestProjectAttachment(string devKey, int testprojectid, string filename, string fileType, string content, string title, string description);
 

@@ -9,7 +9,7 @@ namespace nunitTests
 {
     [TestFixture]
     [TestLinkFixture(
-    ConfigFile="tlinkconfig.xml",
+    ConfigFile="sepuratestlinkconfig.xml",
     TestPlan = "Automatic Testing",
     TestSuite = "nunitAddOnSampleTests")]
     public class Class2Tests

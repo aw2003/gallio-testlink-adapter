@@ -33,11 +33,43 @@ namespace Meyn.TestLink
     /// <summary>
     /// represent the result of a test case execution
     /// </summary>
-    public enum TestCaseResultStatus { Pass, Fail, Blocked , undefined}
+    public enum TestCaseResultStatus 
+    {
+        /// <summary>
+        /// Testcase result status pass
+        /// </summary>
+        Pass,
+        /// <summary>
+        /// Testcase result status fail
+        /// </summary>
+        Fail, 
+        /// <summary>
+        /// Testcase result status blocked
+        /// </summary>
+        Blocked, 
+        /// <summary>
+        /// Testcase result status undefined
+        /// </summary>
+        undefined
+    }
     /// <summary>
     /// used for creating test cases to tell Testlink what to do if another test case is found with the same name
     /// </summary>
-    public enum ActionOnDuplicatedName { Block, GenerateNew, CreateNewVersion }
+    public enum ActionOnDuplicatedName 
+    { 
+        /// <summary>
+        /// Block testcase creating if using a duplicated name
+        /// </summary>
+        Block, 
+        /// <summary>
+        /// Generate a new testcase if a duplicated name
+        /// </summary>
+        GenerateNew,
+        /// <summary>
+        /// Create a new version of the testcase if a duplicated name
+        /// </summary>
+        CreateNewVersion 
+    }
 
     /// <summary>
     /// this is the proxy class to connect to TestLink.
@@ -1221,6 +1253,11 @@ namespace Meyn.TestLink
             return result;
         }
 
+        /// <summary>
+        /// Get all the test suites for a given test suite ID
+        /// </summary>
+        /// <param name="testsuiteid"></param>
+        /// <returns></returns>
         public List<TestSuite> GetTestSuitesForTestSuite(int testsuiteid)
         {
             List<TestSuite> Result = new List<TestSuite>();
