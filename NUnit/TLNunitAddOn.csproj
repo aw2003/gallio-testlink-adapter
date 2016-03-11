@@ -149,8 +149,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetDir)  "C:\Program Files (x86)\NUnit.org\nunit-console\addins"
-
-REM copy $(TargetDir) "C:\src\DotNet\nunit\NUnit-2.5.2.9222\solutions\vs2008\bin\Debug\addins"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>
